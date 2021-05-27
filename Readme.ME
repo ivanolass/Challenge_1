@@ -1,0 +1,89 @@
+#Challenge1 Test - Ivan Gomez
+
+This repository stores frontend test cases for saucedemo.com page, the main folder contains the structure using Page Object Model(POM) designed in testcafe.
+More infomation about POM in https://testcafe.io/documentation/402826/guides/concepts/page-model
+
+##CONTENT
+1.1 STRUCTURE
+1.2 PRECONDITIONS 
+1.3 ENVIROMENT SETUP
+1.4 VARIABLES
+1.5 TEST EXECUTION
+---------------------------------------------------------------------
+1.1 STRUCTURE
+The structure ins te below
+Main folder
+	  ->Data -> contain the file Constants.js in which all the constants are stored
+	  ->Pages -> Contains the files .js for each of the pages of the applications
+	  ->Test -> contains the .test.js files for the test execution
+	  ->package.json -> contains the information and the execution scripts
+----------------------------------------------------------------------
+1.2 PRECONDITIONS
+	The preconditions are have installed a IDE (you can choose your prefered), Node.js and Artilley, you can follow the blow links
+	
+	IDE:
+		Visual Studio:
+			https://code.visualstudio.com/
+		Atom:	
+			https://ide.atom.io/
+	NODE.js:
+	https://wsvincent.com/install-node-js-npm-windows/
+	
+	Artillery:
+	https://artillery.io/docs/guides/getting-started/installing-artillery.html
+
+----------------------------------------------------------------------
+1.3 ENVIROMENT SETUP
+	Create a new folder where the files will be store.
+	Move the downloaded files to the folder
+	Open the prefered IDE and open the folder previusly created
+	Open the IDE Terminal for the next installations
+
+	1.3.1 Install the Package:
+		Using the command line in the terminal, navigate with 'cd' to the folder where the "package.json" file and rune the next command to install
+		npm install
+	
+	1.3.2 Install Test café
+		Using the terminal run the mext command
+		npm install testcafe
+		
+	1.3.3 Install dotenv
+		Using the terminal run the mext command
+		npm install dotenv
+
+----------------------------------------------------------------------
+1.4 VARIABLES
+There are three mandatory variables for run the test.
+	Place on the project root folder and create a new file with name ".env"
+	Open the file and add the below variable names in the .env file data
+
+	U_NAME -> for username
+	PASSWD -> for Password
+	_URL   -> for the webpage
+
+Assign the prefered username, password and the url so automatically the aplication will Log in with that credentials on the selected url
+Example:
+
+	U_NAME=juan@perez.com
+	PASSWD=Test123
+	_URL=https://testa.com
+---------------------------------------------------------------------
+1.5 TEST EXECUTION
+	To run the test use "npm run" in command line and the below command 
+
+	    testchrome - To run the tests in Google Chrome Browser
+	    testfirefox - To run the tests in Mozilla Firefox Browser
+	    testsafari - To run the tests in Safari Browser
+	    testedge - To run the tests in Microsoft Edge Browser
+	    test_all_browsers - To run the tests in all avaliable Browsers installed
+	    testselectedbrowsers - To run the tests in Microsoft Edge, Mozilla Firefox, Google Chrome Bowsers
+
+	"testselectedbrowsers" browsers can be changed acoording your needs, in the package.json locate '"scripts": {'
+		look for the script "testselectedbrowsers" and add or remove the prefered browser
+	example:
+		"testcafe edge,firefox,chrome ./Test"-> remove firefox -> "testcafe edge,chrome ./Test"
+		"testcafe edge,firefox,chrome ./Test"-> Add safari -> "testcafe edge,firefox,chrome,safari ./Test"
+
+Example of test run:
+		npm run  testselectedbrowsers
+----------------------------------------------------------------------

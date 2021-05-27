@@ -1,0 +1,21 @@
+{
+  "name": "qa_workshoop",
+  "version": "1.0.0",
+  "description": "Challenge Exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testchrome": "testcafe chrome ./Test",
+    "testfirefox": "testcafe firefox ./Test",
+    "testsafari": "testcafe safari ./Test",
+    "testedge": "testcafe edge ./Test",
+    "testselectedbrowsers": "testcafe edge,firefox,chrome ./Test",
+    "test_all_browsers": "testcafe all ./Test"
+  },
+  "author": "Ivan Gomez",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "testcafe": "^1.14.2"
+  }
+}
